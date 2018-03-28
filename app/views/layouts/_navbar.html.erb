@@ -6,7 +6,7 @@
     <ul class="nav navbar-nav">
       <% if user_signed_in? %>
         <li id="icons"><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
-        <li id="icons"><%= link_to ( '<i class="fas fa-user-circle"></i>' + truncate(current_user.email, length: 20)), edit_user_registration_path ,
+        <li id="icons"><%= link_to ( '<i class="fas fa-user-circle"></i>' + truncate(current_user.email, length: 20)).html_safe, edit_user_registration_path ,
                         title: 'Edit Profile' %></li>
       <% end %>
       <% if !user_signed_in? %>
