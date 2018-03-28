@@ -1,6 +1,6 @@
 class ExampleMailer < ApplicationMailer
   def sample_email(user)
-    @user = user
+    @user = user.last
     mail(to: @user.email, subject: 'Sample Email')
   end
 end
